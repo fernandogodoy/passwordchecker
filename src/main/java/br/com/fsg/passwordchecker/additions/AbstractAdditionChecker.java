@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import br.com.fsg.passwordchecker.deduction.PatternUtil;
+import br.com.fsg.passwordchecker.util.PatternUtil;
 
 /**
  * 

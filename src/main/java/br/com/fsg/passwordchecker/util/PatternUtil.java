@@ -1,4 +1,4 @@
-package br.com.fsg.passwordchecker.deduction;
+package br.com.fsg.passwordchecker.util;
 
 import java.util.regex.Pattern;
 
