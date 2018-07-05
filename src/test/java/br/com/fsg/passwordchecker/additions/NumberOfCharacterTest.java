@@ -13,13 +13,13 @@ import org.junit.Test;
  * @author Fernando-Godoy
  *
  */
-public class NumberCharacterTest {
+public class NumberOfCharacterTest {
 
 	private AdditionChecker checker;
 
 	@Before
 	public void init() {
-		checker = new NumberCharacterChecker();
+		checker = new NumberOfCharacterChecker();
 	}
 
 	@Test
@@ -53,7 +53,7 @@ public class NumberCharacterTest {
 	}
 	
 	@Test
-	public void numberAndLettersAndEspecialCharsTest() {
+	public void numberAndLettersAndSpecialCharsTest() {
 		var result = checker.verify("a1b2c3d4e5f6g7i8j9@*-+.*/ç^;?0");
 		assertThat(BigDecimal.valueOf(120), equalTo(result));
 	}

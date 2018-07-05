@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * @author Fernando-Godoy
  *
  */
-public class LowercaseLettersChecker extends AbstractAdditionChecker {
+public class LowerLettersChecker extends AbstractAdditionChecker {
 
 	private static final BigDecimal OPERATOR = BigDecimal.valueOf(2);
 

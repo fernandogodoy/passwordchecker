@@ -19,7 +19,7 @@ public class UppercaseLettersCheckerTest {
 
 	@Before
 	public void init() {
-		checker = new UppercaseLettersChecker();
+		checker = new UpperLettersChecker();
 	}
 
 	@Test
@@ -50,6 +50,13 @@ public class UppercaseLettersCheckerTest {
 	public void numberAndLettersTest() {
 		var result = checker.verify("a1B2c3D4e5F6g7I8j9");
 		assertThat(BigDecimal.valueOf(28), equalTo(result));
+	}
+	
+
+	@Test
+	public void cedilhaAndLetter() {
+		var result = checker.verify("ÇA");
+		assertThat(BigDecimal.valueOf(2), equalTo(result));
 	}
 
 	@Test

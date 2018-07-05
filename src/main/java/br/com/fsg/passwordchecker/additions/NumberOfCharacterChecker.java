@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * @author Fernando-Godoy
  *
  */
-public class NumberCharacterChecker extends AbstractAdditionChecker {
+public class NumberOfCharacterChecker extends AbstractAdditionChecker {
 
 	private static final int OPERATOR = 4;
 

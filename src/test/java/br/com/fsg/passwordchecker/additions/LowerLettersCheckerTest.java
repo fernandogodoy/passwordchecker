@@ -13,13 +13,13 @@ import org.junit.Test;
  * @author Fernando-Godoy
  *
  */
-public class LowercaseLettersCheckerTest {
+public class LowerLettersCheckerTest {
 
 	private AdditionChecker checker;
 
 	@Before
 	public void init() {
-		checker = new LowercaseLettersChecker();
+		checker = new LowerLettersChecker();
 	}
 
 	@Test
@@ -53,7 +53,13 @@ public class LowercaseLettersCheckerTest {
 	}
 
 	@Test
-	public void numberAndLettersAndEspecialCharsTest() {
+	public void cedilhaAndLetter() {
+		var result = checker.verify("ça");
+		assertThat(BigDecimal.valueOf(2), equalTo(result));
+	}
+
+	@Test
+	public void numberAndLettersAndSpecialCharsTest() {
 		var result = checker.verify("a1B2c3D4e5F6g7I8j9@*-+.*/ç^;?0");
 		assertThat(BigDecimal.valueOf(50), equalTo(result));
 	}
