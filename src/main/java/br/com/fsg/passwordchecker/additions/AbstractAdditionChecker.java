@@ -21,7 +21,7 @@ public abstract class AbstractAdditionChecker implements AdditionChecker {
 
 	@Override
 	public BigDecimal verify(String password) {
-		this.password = password;
+		this.password = password.trim();
 		return rate();
 	}
 
@@ -41,8 +41,20 @@ public abstract class AbstractAdditionChecker implements AdditionChecker {
 		return countLowerLetters() > 0;
 	}
 
+	public boolean hasNumber() {
+		return countNumbers() > 0;
+	}
+	
+	public boolean hasSymbol() {
+		return countSymbols() > 0;
+	}
+
 	public long countLowerLetters() {
 		return counterByPattern(PatternUtil.LOWER_PATTERN);
+	}
+
+	public long countNotLetters() {
+		return counterByPattern(PatternUtil.LETTERS);
 	}
 
 	public boolean hasLetters() {
