@@ -21,18 +21,18 @@ public class PasswordCheckerServiceImpl implements PasswordCheckerService {
 	private Factory factory;
 
 	public PasswordCheckerResponse check(final String password) {
-		var rate = getAdditionVal(password).subtract(getDeductionVal(password));
+		var rate = getAdditionScore(password).subtract(getDeductionScore(password));
 		var level = LevelScore.byScore(rate);
 		return new PasswordCheckerResponse(rate, level);
 	}
 
-	private BigDecimal getAdditionVal(final String password) {
+	private BigDecimal getAdditionScore(final String password) {
 		return factory.additionsFactory().stream()
 				.map(addition -> addition.verify(password))
 				.reduce(BigDecimal.ZERO, BigDecimal::add);
 	}
 
-	private BigDecimal getDeductionVal(final String password) {
+	private BigDecimal getDeductionScore(final String password) {
 		return factory.deductionsFactory().stream()
 				.map(addition -> addition.verify(password))
 				.reduce(BigDecimal.ZERO, BigDecimal::add);
