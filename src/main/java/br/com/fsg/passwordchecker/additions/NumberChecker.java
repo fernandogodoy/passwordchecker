@@ -14,8 +14,10 @@ public class NumberChecker extends AbstractAdditionChecker {
 
 	@Override
 	protected BigDecimal rate() {
-		var numberSize = BigDecimal.valueOf(countNumbers());
-		return hasLetters() ? (numberSize.multiply(OPERATOR)) : BigDecimal.ZERO;
+		var checker = getChecker();
+
+		var numberSize = BigDecimal.valueOf(checker.countNumbers());
+		return checker.hasLetters() ? (numberSize.multiply(OPERATOR)) : BigDecimal.ZERO;
 	}
 
 }

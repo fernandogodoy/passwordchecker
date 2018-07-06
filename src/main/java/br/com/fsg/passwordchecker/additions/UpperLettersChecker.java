@@ -13,9 +13,11 @@ public class UpperLettersChecker extends AbstractAdditionChecker {
 
 	@Override
 	protected BigDecimal rate() {
-		var passwordSize = BigDecimal.valueOf(getPasswordLength());
-		var upperSize = BigDecimal.valueOf(countUpperLetters());	
-		return hasUpperLetters() ? (passwordSize.subtract(upperSize)).multiply(OPERATOR) : BigDecimal.ZERO;
+		var checker = getChecker();
+
+		var passwordSize = BigDecimal.valueOf(checker.getPasswordLength());
+		var upperSize = BigDecimal.valueOf(checker.countUpperLetters());
+		return checker.hasUpperLetters() ? (passwordSize.subtract(upperSize)).multiply(OPERATOR) : BigDecimal.ZERO;
 	}
 
 }

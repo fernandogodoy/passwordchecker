@@ -13,26 +13,28 @@ public class RequirementsChecker extends AbstractAdditionChecker {
 
 	@Override
 	protected BigDecimal rate() {
-		BigDecimal lowerSize = BigDecimal.ZERO;
-		BigDecimal upperSize = BigDecimal.ZERO;
-		BigDecimal numbersSize = BigDecimal.ZERO;
-		BigDecimal symbolsSize = BigDecimal.ZERO;
+		var checker = getChecker();
+		var lowerSize = BigDecimal.ZERO;
+		var upperSize = BigDecimal.ZERO;
+		var numbersSize = BigDecimal.ZERO;
+		var symbolsSize = BigDecimal.ZERO;
 
-		if (hasLowerLetters()) {
-			lowerSize = BigDecimal.valueOf(countLowerLetters());
+		if (checker.hasLowerLetters()) {
+			lowerSize = BigDecimal.valueOf(checker.countLowerLetters());
 		}
-		if (hasUpperLetters()) {
-			upperSize = BigDecimal.valueOf(countLowerLetters());
+		if (checker.hasUpperLetters()) {
+			upperSize = BigDecimal.valueOf(checker.countLowerLetters());
 		}
-		if (hasNumber()) {
-			numbersSize = BigDecimal.valueOf(countNumbers());
-		}
-
-		if (hasSymbol()) {
-			symbolsSize = BigDecimal.valueOf(countSymbols());
+		if (checker.hasNumber()) {
+			numbersSize = BigDecimal.valueOf(checker.countNumbers());
 		}
 
-		return getPasswordLength() > 8 ? (lowerSize.add(upperSize).add(numbersSize).add(symbolsSize)).multiply(OPERATOR)
+		if (checker.hasSymbol()) {
+			symbolsSize = BigDecimal.valueOf(checker.countSymbols());
+		}
+
+		return checker.getPasswordLength() > 8
+				? (lowerSize.add(upperSize).add(numbersSize).add(symbolsSize)).multiply(OPERATOR)
 				: BigDecimal.ZERO;
 	}
 

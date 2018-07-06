@@ -13,7 +13,9 @@ public class NumberOfCharacterChecker extends AbstractAdditionChecker {
 
 	@Override
 	protected BigDecimal rate() {
-		return BigDecimal.valueOf(getPasswordLength() * OPERATOR);
+		var checker = getChecker();
+		
+		return BigDecimal.valueOf(checker.getPasswordLength() * OPERATOR);
 	}
 
 }

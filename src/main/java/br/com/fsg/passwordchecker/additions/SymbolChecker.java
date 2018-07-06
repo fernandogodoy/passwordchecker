@@ -14,7 +14,9 @@ public class SymbolChecker extends AbstractAdditionChecker {
 
 	@Override
 	protected BigDecimal rate() {
-		var numberSize = BigDecimal.valueOf(countSymbols());
+		var checker = getChecker();
+
+		var numberSize = BigDecimal.valueOf(checker.countSymbols());
 		return (numberSize.multiply(OPERATOR));
 	}
 

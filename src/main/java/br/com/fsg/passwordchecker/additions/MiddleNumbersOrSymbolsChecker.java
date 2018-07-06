@@ -13,8 +13,10 @@ public class MiddleNumbersOrSymbolsChecker extends AbstractAdditionChecker {
 
 	@Override
 	protected BigDecimal rate() {
-		BigDecimal passwordLength = BigDecimal.valueOf(getPasswordLength());
-		BigDecimal notLetterSize = BigDecimal.valueOf(countNotLetters());
+		var checker = getChecker();
+
+		var passwordLength = BigDecimal.valueOf(checker.getPasswordLength());
+		var notLetterSize = BigDecimal.valueOf(checker.countNotLetters());
 		return passwordLength.intValue() > 2 ? (passwordLength.subtract(notLetterSize)).multiply(OPERATOR)
 				: BigDecimal.ZERO;
 	}

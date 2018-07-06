@@ -13,9 +13,10 @@ public class LowerLettersChecker extends AbstractAdditionChecker {
 
 	@Override
 	protected BigDecimal rate() {
-		var passwordSize = BigDecimal.valueOf(getPasswordLength());
-		var lowerSize = BigDecimal.valueOf(countLowerLetters());	
-		return hasLowerLetters() ? (passwordSize.subtract(lowerSize)).multiply(OPERATOR) : BigDecimal.ZERO;
+		var checker = getChecker();
+		var passwordSize = BigDecimal.valueOf(checker.getPasswordLength());
+		var lowerSize = BigDecimal.valueOf(checker.countLowerLetters());
+		return checker.hasLowerLetters() ? (passwordSize.subtract(lowerSize)).multiply(OPERATOR) : BigDecimal.ZERO;
 	}
 
 }
