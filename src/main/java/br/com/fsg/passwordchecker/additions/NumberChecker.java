@@ -2,12 +2,15 @@ package br.com.fsg.passwordchecker.additions;
 
 import java.math.BigDecimal;
 
+import org.springframework.stereotype.Component;
+
 /**
  * 
  * @author Fernando-Godoy
  *
  */
 
+@Component
 public class NumberChecker extends AbstractAdditionChecker {
 
 	private static final BigDecimal OPERATOR = BigDecimal.valueOf(4);

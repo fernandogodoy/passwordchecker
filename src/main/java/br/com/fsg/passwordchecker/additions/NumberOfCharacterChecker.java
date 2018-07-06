@@ -2,11 +2,14 @@ package br.com.fsg.passwordchecker.additions;
 
 import java.math.BigDecimal;
 
+import org.springframework.stereotype.Component;
+
 /**
  * 
  * @author Fernando-Godoy
  *
  */
+@Component
 public class NumberOfCharacterChecker extends AbstractAdditionChecker {
 
 	private static final int OPERATOR = 4;

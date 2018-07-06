@@ -12,8 +12,8 @@ public class NumbersOnlyChecker extends AbstractDeduction {
 	@Override
 	protected BigDecimal rate() {
 		var checker = getChecker();
-		var onlyLettersSize = BigDecimal.valueOf(checker.countOnlyLetters());
-		return checker.hasNumber() || checker.hasSymbol() ? BigDecimal.ZERO : onlyLettersSize;
+		var onlyNumbersSize = BigDecimal.valueOf(checker.countNumbers());
+		return checker.hastOnlyLetters()? BigDecimal.ZERO : onlyNumbersSize;
 	}
 
 }

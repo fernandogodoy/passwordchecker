@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 /**
  * 
- * @author fsg
+ * @author Fernando-Godóy
  *
  */
 public class PatternUtil {

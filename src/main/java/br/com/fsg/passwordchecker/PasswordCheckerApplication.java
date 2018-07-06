@@ -9,5 +9,5 @@ public class PasswordCheckerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PasswordCheckerApplication.class, args);
 	}
-	
+
 }
