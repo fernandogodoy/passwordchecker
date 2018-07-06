@@ -1,4 +1,4 @@
-Este projeto é baseado no # [Password Meter](http://www.passwordmeter.com/)
+Este projeto é baseado na regras do [Password Meter](http://www.passwordmeter.com/)
 
 ## Requisitos
 	Java 10 (ou superior)
