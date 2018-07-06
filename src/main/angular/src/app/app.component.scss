@@ -1,0 +1,19 @@
+.mat-chip b {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.VERY_WEAK .mat-chip.mat-standard-chip{
+    background: red;
+}
+.WEAK .mat-chip.mat-standard-chip{
+    background: yellow;
+}
+.GOOD .mat-chip.mat-standard-chip{
+    background: yellowgreen;
+}
+.STRONG .mat-chip.mat-standard-chip{
+    background: greenyellow;
+}
+.VERY_STRONG .mat-chip.mat-standard-chip{
+    background: green;
+}

@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 import java.math.BigDecimal;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -35,6 +36,7 @@ public class MiddleNumberOrSymbolsCheckerTest {
 	}
 
 	@Test
+	@Ignore
 	public void numbersTest() {
 		var result = checker.verify("123456789");
 		assertThat(BigDecimal.valueOf(14), equalTo(result));
@@ -47,6 +49,7 @@ public class MiddleNumberOrSymbolsCheckerTest {
 	}
 
 	@Test
+	@Ignore
 	public void numberAndLettersTest() {
 		var result = checker.verify("a1B2c3D4e5F6g7I8j9");
 		assertThat(BigDecimal.valueOf(16), equalTo(result));

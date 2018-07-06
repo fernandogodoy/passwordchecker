@@ -1,6 +1,6 @@
 package br.com.fsg.passwordchecker.deduction;
 
-import java.math.BigDecimal;
+import br.com.fsg.passwordchecker.util.Meter;
 
 /**
  * Check a password and subtract a bonus when the restrictions are correct
@@ -8,8 +8,7 @@ import java.math.BigDecimal;
  * @author Fernando-Godoy
  *
  */
-public interface Deduction {
+public interface Deduction extends Meter {
 
-	BigDecimal verify(String password);
 
 }

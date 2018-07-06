@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div fxLayout="column">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Password Meter</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <br>
+  <div fxLayout="row" fxLayoutAlign="space-around">
+    <mat-card fxFlex="50" fxFlex.xs="90">
+      <mat-card-title>Avaliador de segurança de senha</mat-card-title>
+      <mat-card-content>
+        <mat-form-field fxFlex="100">
+          <input matInput placeholder="Senha" value="" type="password" (input)="verifyPass($event.target.value)" >
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxFlexOffset="2" fxLayout="row">
+          <span fxFlex="55px" style="padding-top: 8px;"><b> {{result.score ? result.score : 0  | number:'1.0' }}%   </b></span> 
+          <mat-chip-list [class]="result.levelScore">
+            <mat-chip><b>{{result.description ? result.description : 'Too Short'}}</b></mat-chip>
+          </mat-chip-list>
+        </div>
+      </mat-card-actions>
+      <br>
+    </mat-card>
+  </div>
+</div>
